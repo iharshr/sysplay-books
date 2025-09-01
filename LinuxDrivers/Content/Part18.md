@@ -153,7 +153,7 @@ $ ls -al # List the .sfsf created with a size of 512 KiBytes
 
 Figure 33 shows the `.sfsf` pictorially for the partition size of 1024 blocks of 512 bytes each.
 
-![Figure 33](/LinuxDrivers/Images/Part18/figure_33_simula_file_system.png)
+![Figure 33](https://github.com/iharshr/sysplay-books/raw/gh-pages/LinuxDrivers/Images/Part18/figure_33_simula_file_system.png)
 
 ## Summing up
 

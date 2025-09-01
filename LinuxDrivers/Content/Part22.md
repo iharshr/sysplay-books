@@ -165,7 +165,7 @@ All the above code pieces put in together as the bare bone real_sfs_bb.c, along 
 
 Once compiled using make, getting the real_sfs_bb.ko driver, Pugs did his usual unusual experiments, shown as in Figure 38.
 
-![Figure 38](/LinuxDrivers/Images/Part22/figure_38_bare_bone_real_sfs_experiments-1024x549.png)
+![Figure 38](https://github.com/iharshr/sysplay-books/raw/gh-pages/LinuxDrivers/Images/Part22/figure_38_bare_bone_real_sfs_experiments-1024x549.png)
 
 Pugs’ experiments (Explanation of Figure 38):
 

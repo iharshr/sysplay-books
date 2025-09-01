@@ -223,7 +223,7 @@ The above (shell like) program primarily reads the super block from the partitio
 
 Figure 34 shows the browser in action, using the above commands.
 
-![Figure 34](/LinuxDrivers/Images/Part19/figure_34_simula_file_system_browser-1024x549.png)
+![Figure 34](https://github.com/iharshr/sysplay-books/raw/gh-pages/LinuxDrivers/Images/Part19/figure_34_simula_file_system_browser-1024x549.png)
 
 sfs_list() traverses through all the file entries in the partition and prints all the non-null filename entries – with file name, size, permissions, and its creation time stamp. sfs_create() looks up for an available (null filename) entry and then updates it with the given filename, size of 0 bytes, permissions of “rwx”, and the current time stamp. And sfs_remove() looks up for an existing file entry, having the filename to be removed, and then nullifies it. The other parts in the above code are more of basic error handling cases like invalid command in browse_sfs(), existing file name in sfs_create(), non-existing file name in sfs_remove(), etc.
 

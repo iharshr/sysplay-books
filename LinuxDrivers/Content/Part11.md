@@ -11,11 +11,11 @@ Whether a driver of a USB device is there or not on a Linux system, a valid USB 
 
 After this, it is up to the various drivers, interfaces, and applications (which are dependent on the various Linux distributions), to have the user space view of the detected devices. Figure 17 shows a top to bottom view of USB subsystem in Linux. A basic listing of all detected USB devices can be obtained using the lsusb command, as root. Figure 18 shows the same, without and with the pen drive being inserted into the system. A -v option to lsusb provides detailed information. In many Linux distributions like Mandriva, Fedora, … `usbfs` driver is loaded as part of the default configuration. This enables the detected USB device details to be viewed in a more techno-friendly way through the `/proc` window using `cat /proc/bus/usb/devices`. Figure 19 shows a typical snippet of the same, clipped around the pen drive specific section. The complete listing basically contains such sections, each for one of the valid USB devices detected on the Linux system.
 
-![Figure 17](/LinuxDrivers/Images/Part11/figure_17_usb_subsystem_in_linux.png)
+![Figure 17](https://github.com/iharshr/sysplay-books/raw/gh-pages/LinuxDrivers/Images/Part11/figure_17_usb_subsystem_in_linux.png)
 
-![Figure 18](/LinuxDrivers/Images/Part11/figure_18_lsusb_output.png)
+![Figure 18](https://github.com/iharshr/sysplay-books/raw/gh-pages/LinuxDrivers/Images/Part11/figure_18_lsusb_output.png)
 
-![Figure 19](/LinuxDrivers/Images/Part11/figure_19_usb_proc_window_snippet.png)
+![Figure 19](https://github.com/iharshr/sysplay-books/raw/gh-pages/LinuxDrivers/Images/Part11/figure_19_usb_proc_window_snippet.png)
 
 ## Decoding a USB device section
 
@@ -32,7 +32,7 @@ As per USB protocol specification, all valid USB devices have an implicit specia
 
 Coming back to the USB device sections (Figure 19), the first letter on each line represents the various parts of the USB device specification just explained. For example, D for device, C for configuration, I for interface, E for endpoint, etc. Details about them and various others are available under the kernel source `Documentation/usb/proc_usb_info.txt`
 
-![Figure 20](/LinuxDrivers/Images/Part11/figure_20_usb_device_overview.png)
+![Figure 20](https://github.com/iharshr/sysplay-books/raw/gh-pages/LinuxDrivers/Images/Part11/figure_20_usb_device_overview.png)
 
 ## The USB pen drive driver registration
 
@@ -105,7 +105,7 @@ Then, the usual steps for any Linux device driver may be repeated:
 
 But surprisingly the results wouldn’t be as expected. Check for dmesg and the proc window to see the various logs and details. Not because USB driver is different from a character driver. But there’s a catch. Figure 19 shows that the pen drive has one interface (numbered 0), which is already associated with the usual usb-storage driver. Now, in order to get our driver associated with that interface, we need to unload the usb-storage driver (i.e. rmmod usb-storage) after plugging in the pen drive, and then load our driver. Once this sequence is followed, the results would be as expected. Figure 21 shows a glimpse of the possible logs and proc window snippet. Repeat hot-plugging in and hot-plugging out the pen drive to observe the probe and disconnect calls in action – but don’t forget unloading the usb-storage driver, every time you plug in the pen driver.
 
-![Figure 21](/LinuxDrivers/Images/Part11/figure_21_pen_driver.png)
+![Figure 21](https://github.com/iharshr/sysplay-books/raw/gh-pages/LinuxDrivers/Images/Part11/figure_21_pen_driver.png)
 
 ## Summing up
 

@@ -31,7 +31,7 @@ class_destroy(cl);
 
 Refer to Figure 9, for the `/sys` entries created using "chardrv" as the `<device class name>` and "mynull" as the `<device name format>`. That also shows the device file, created by `udev`, based on the `<major>:<minor>` entry in the dev file.
 
-![Figure 9](/LinuxDrivers/Images/Part5/figure_9_auto_dev_file_creation.png)
+![Figure 9](https://github.com/iharshr/sysplay-books/raw/gh-pages/LinuxDrivers/Images/Part5/figure_9_auto_dev_file_creation.png)
 
 In case of multiple minors, `device_create()` and `device_destroy()` APIs may be put in for-loop, and the `<device name format>`string could be useful. For example, the `device_create()` call in a for-loop indexed by 'i' could be as follows:
 
@@ -153,7 +153,7 @@ Then, Shweta repeated the usual build with new test steps as follows:
 5. “null driver” specific experiments (Refer to Figure 10 for details).
 6. Unload the driver using `rmmod`.
 
-![Figure 10](/LinuxDrivers/Images/Part5/figure_10_null_driver_experiments.png)
+![Figure 10](https://github.com/iharshr/sysplay-books/raw/gh-pages/LinuxDrivers/Images/Part5/figure_10_null_driver_experiments.png)
 
 ## Summing up
 

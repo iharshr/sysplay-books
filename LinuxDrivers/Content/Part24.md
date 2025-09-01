@@ -23,7 +23,7 @@ The highlights of their demo (on root shell) are as follows:
 
 Figure 40 shows the real SIMULA file system in action
 
-![Figure 40](/LinuxDrivers/Images/Part24/figure_40_sfs_module_in_action_hi_res.png)
+![Figure 40](https://github.com/iharshr/sysplay-books/raw/gh-pages/LinuxDrivers/Images/Part24/figure_40_sfs_module_in_action_hi_res.png)
 
 ## Realities behind the action
 

@@ -15,7 +15,7 @@ Depending on the type and attributes of information to be transferred, a USB dev
 
 Additionally, all but control endpoints could be “in” or “out”, indicating its direction of data transfer. “in” indicates data flow from USB device to the host machine and “out” indicates data flow from the host machine to USB device. Technically, an endpoint is identified using a 8-bit number, most significant bit (MSB) of which indicates the direction – 0 meaning out, and 1 meaning in. Control endpoints are bi-directional and the MSB is ignored.
 
-![Figure 19](/LinuxDrivers/Images/Part12/figure_19_usb_proc_window_snippet.png)
+![Figure 19](https://github.com/iharshr/sysplay-books/raw/gh-pages/LinuxDrivers/Images/Part12/figure_19_usb_proc_window_snippet.png)
 
 Figure 19 shows a typical snippet of USB device specifications for devices connected on a system. To be specific, the “E: ” lines in the figure shows example of an interrupt endpoint of a UHCI Host Controller and two bulk endpoints of the pen drive under consideration. Also, the endpoint numbers (in hex) are respectively 0x81, 0x01, 0x82. The MSB of the first and third being 1 indicating “in” endpoints, represented by “(I)” in the figure. Second one is an “(O)” for the “out” endpoint. “MaxPS” specifies the maximum packet size, i.e. the data size that can be transferred in a single go. Again as expected, for the interrupt endpoint it is 2 (<= 8), and 64 for the bulk endpoints. “Ivl” specifies the interval in milliseconds to be given between two consecutive data packet transfers for proper transfer and is more significant for the interrupt endpoints.
 
@@ -164,7 +164,7 @@ Then, the usual steps for any Linux device driver may be repeated, along with th
 
 Figure 22 shows a snippet of the above steps on Pugs’ system. Remember to ensure (in the output of `cat /proc/bus/usb/devices`) that the usual usb-storage driver is not the one associated with the pen drive interface, rather it should be the pen_info driver.
 
-![Figure 22](/LinuxDrivers/Images/Part12/figure_22_dmesg_log.png)
+![Figure 22](https://github.com/iharshr/sysplay-books/raw/gh-pages/LinuxDrivers/Images/Part12/figure_22_dmesg_log.png)
 
 ## Summing up
 

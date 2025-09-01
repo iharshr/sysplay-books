@@ -50,7 +50,7 @@ With all the above changes compiled into format_real_sfs, Pugs plugged in his pe
 
 > *Caution: * **Take a backup of your pen drive’s content – you are formatting it for real. Be careful in choosing the right partition of your pen drive. Otherwise, you may forever lose data from your hard disk or even make your system un-bootable. You have been warned.**
 
-![Figure 36](/LinuxDrivers/Images/Part21/figure_36_formatting_the_pen_drive-1024x549.png)
+![Figure 36](https://github.com/iharshr/sysplay-books/raw/gh-pages/LinuxDrivers/Images/Part21/figure_36_formatting_the_pen_drive-1024x549.png)
 
 Figure 36 demonstrates all the above but backup steps at root prompt #. Instead, one may use sudo, as well. Note that Pugs got his pen drive partition mounted at `/media/10AC-BF1C`, and the corresponding device file is `/dev/sdb`1 (/dev/sdb being the complete pen drive). You may have both these differently. Accordingly, follow the steps for yourself. Also, note that, the real SFS formatting is then started using the following command:
 

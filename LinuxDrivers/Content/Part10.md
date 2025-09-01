@@ -33,11 +33,11 @@ See the highlighted selections in Figure 15, for how and where would these optio
 - “Compile the kernel with debug info” → CONFIG_DEBUG_INFO
 - “Compile the kernel with frame pointers” → CONFIG_FRAME_POINTER
 
-![Figure 15](/LinuxDrivers/Images/Part10/figure_15_configuring_kernel_with_kgdb-1024x640.png)
+![Figure 15](https://github.com/iharshr/sysplay-books/raw/gh-pages/LinuxDrivers/Images/Part10/figure_15_configuring_kernel_with_kgdb-1024x640.png)
 
 Once configured and saved, the kernel can be built by typing make in the kernel source directory. And then a make install is expected to install it, along with adding an entry for the installed kernel in the grub configuration file. Depending on the distribution, the grub configuration file may be `/boot/grub/menu.lst`, `/etc/grub.cfg`, or something similar. Once installed, the kgdb related kernel boot parameters, need to be added to this newly added entry.
 
-![Figure 16](/LinuxDrivers/Images/Part10/figure_16_grub_config_for_kernel_with_kgdb-1024x549.png)
+![Figure 16](https://github.com/iharshr/sysplay-books/raw/gh-pages/LinuxDrivers/Images/Part10/figure_16_grub_config_for_kernel_with_kgdb-1024x549.png)
 
 Figure 16 highlights the kernel boot parameters added to the newly installed kernel, in the grub‘s configuration file.
 
