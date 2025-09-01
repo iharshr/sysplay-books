@@ -6,7 +6,7 @@
 
 “Doesn’t it sound like a mechanical engineering subject: Design of hard disk?”, questioned Shweta. “Yes, it does. But understanding it gets us an insight into its programming aspect”, reasoned Pugs while waiting for the commencement of the seminar on storage systems.
 
-![Figure 23](/Images/Part14/figure_23_fdisk_listing.png)
+![Figure 23](/LinuxDrivers/Images/Part14/figure_23_fdisk_listing.png)
 
 The seminar started with a few hard disks in the presenter’s hand and then a dive down into her system showing the output of fdisk -l, as shown in Figure 23. The first line shows the hard disk size in human friendly format and in bytes. The second line mentions the number of logical heads, logical sectors per track, and the actual number of cylinders on the disk – these together are referred as the geometry of the disk. The 255 heads indicating the number of platters or disks, as one read-write head is needed per disk. Let’s number them say D1, D2, …, D255. Now, each disk would have the same number of concentric circular tracks, starting from outside to inside. In the above case there are 60801 such tracks per disk. Let’s number them say T1, T2, …, T60801. And a particular track number from all the disks forms a cylinder of the same number. For example, tracks T2 from D1, D2, …, D255 will all together form the cylinder C2. Now, each track has the same number of logical sectors – 63 in our case, say S1, S2, …, S63. And each sector is typically 512 bytes. Given this data, one can actually compute the total usable hard disk size, using the following formula:
 
@@ -145,7 +145,7 @@ int main(int argc, char *argv[])
 
 As the above code (`part_info.c`) is an application, compile it to an executable (./part_info) as follows: `gcc part_info.c -o part_info`, and then run `./part_info /dev/sda` to check out your primary partitioning information on `/dev/sda`. Figure 24 shows the output of `./part_info` on the presenter’s system. Compare it with the fdisk output as shown in figure 23.
 
-![Figure 24](/Images/Part14/figure_24_part_info_output.png)
+![Figure 24](/LinuxDrivers/Images/Part14/figure_24_part_info_output.png)
 
 ## Partition types and Boot records
 

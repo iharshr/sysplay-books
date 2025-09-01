@@ -50,7 +50,7 @@ With all the above changes compiled into format_real_sfs, Pugs plugged in his pe
 
 > *Caution: * **Take a backup of your pen drive’s content – you are formatting it for real. Be careful in choosing the right partition of your pen drive. Otherwise, you may forever lose data from your hard disk or even make your system un-bootable. You have been warned.**
 
-![Figure 36](/Images/Part21/figure_36_formatting_the_pen_drive-1024x549.png)
+![Figure 36](/LinuxDrivers/Images/Part21/figure_36_formatting_the_pen_drive-1024x549.png)
 
 Figure 36 demonstrates all the above but backup steps at root prompt #. Instead, one may use sudo, as well. Note that Pugs got his pen drive partition mounted at `/media/10AC-BF1C`, and the corresponding device file is `/dev/sdb`1 (/dev/sdb being the complete pen drive). You may have both these differently. Accordingly, follow the steps for yourself. Also, note that, the real SFS formatting is then started using the following command:
 
@@ -92,7 +92,3 @@ Obviously, there were slight modifications to the browse_sfs.c application as we
 All the updated files (`real_sfs_ds.h`, `format_real_sfs.c`, `browse_real_sfs.c` and `Makefile`) are available from [rsfs_code.tar.bz2](http://sysplay.in/blog/code/rsfs_code.tar.bz2).
 
 Figure 37 shows the browser in action. However, the coolest browsing would be the same way as is done with all other file systems, using the shell commands cd, ls, … Yes, and for that we would need the real SFS module in place. Keep following what’s Pugs upto for getting that in place.
-
-
-
-

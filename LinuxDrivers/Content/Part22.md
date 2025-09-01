@@ -165,7 +165,7 @@ All the above code pieces put in together as the bare bone real_sfs_bb.c, along 
 
 Once compiled using make, getting the real_sfs_bb.ko driver, Pugs did his usual unusual experiments, shown as in Figure 38.
 
-![Figure 38](/Images/Part22/figure_38_bare_bone_real_sfs_experiments-1024x549.png)
+![Figure 38](/LinuxDrivers/Images/Part22/figure_38_bare_bone_real_sfs_experiments-1024x549.png)
 
 Pugs’ experiments (Explanation of Figure 38):
 
@@ -179,4 +179,3 @@ Oops!!! But `df` output shows “Function not implemented”, `cd`gives “Not a
 **Note: The above experiments are using “sudo”. Instead one may get into root shell and do the same without a “sudo”.**
 
 Okay, so no kernel crashes, and a bare bone file system in action – Yippee. Ya! Ya! Pugs knows that df, cd, … are not yet functional. For that, he needs to start adding the various system calls in the other (four) function pointer structures to be able to do cool-cool browsing, the same way as is done with all other file systems, using the various shell commands. And yes, Pugs is already onto his task – after all he needs to have a geeky demo for his final semester project.
-

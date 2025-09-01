@@ -25,7 +25,7 @@ Usually, we would expect these functions to be invoked in the constructor and th
 
 Moreover, as the file operations (write, read, …) are now provided, that is where exactly we need to do the data transfers to and from the USB device. So, `pen_write()` and `pen_read()`below shows the possible calls to usb_bulk_msg() (prototyped in `<linux/usb.h>`) to do the transfers over the pen drive’s bulk end points 0x01 and 0x82, respectively. Refer to the ‘E’ lines of the middle section in Figure 19 for the endpoint number listings of our pen drive. Refer to the header file `<linux/usb.h>` under kernel sources, for the complete list of USB core API prototypes for the other endpoint specific data transfer functions like usb_control_msg(), `usb_interrupt_msg()`, etc. `usb_rcvbulkpipe()`, `usb_sndbulkpipe()`, and many such other macros, also defined in `<linux/usb.h>`, compute the actual endpoint bitmask to be passed to the various USB core APIs.
 
-![Figure 19](/Images/Part13/figure_19_usb_proc_window_snippet.png)
+![Figure 19](/LinuxDrivers/Images/Part13/figure_19_usb_proc_window_snippet.png)
 
 Note that a pen drive belongs to a USB mass storage class, which expects a set of SCSI like commands to be transacted over the bulk endpoints. So, a raw read/write as shown in the code listing below may not really do a data transfer as expected, unless the data is appropriately formatted. But still, this summarizes the overall code flow of a USB driver. To get a feel of real working USB data transfer in a simple and elegant way, one would need some kind of custom USB device, something like the one available at [eSrijan](http://lddk.esrijan.com/).
 
@@ -184,6 +184,3 @@ Unload the driver using `rmmod pen_driver`.
 ## Summing up
 
 Meanwhile, Pugs hooked up his first of its kind creation – the Linux device driver kit (LDDK) into his system to show a live demonstration of the USB data transfers. “A ha! Finally a cool complete working USB driver”, quipped excited Shweta. “Want to have more fun. We could do a block driver over it”, added Pugs. “O! Really”, Shweta asked with a glee on her face. “Yes. But before that we would need to understand the partitioning mechanisms”, commented Pugs.
-
-
-

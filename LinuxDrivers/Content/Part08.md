@@ -21,7 +21,7 @@ void outl(u32 value, unsigned long port);
 
 The basic question may arise, as to which all devices are I/O mapped and what are the port addresses of these devices. The answer is pretty simple. As per x86-specific, all these devices & their mappings are x86 standard and hence pre-defined. Figure 13 shows a snippet of these mappings through the kernel window /proc/ioports. The listing includes pre-defined DMA, timer, RTC, serial, parallel, PCI bus interfaces to name a few.
 
-![Figure 13](/Images/Part8/figure_13_x86_specific_io_ports.png)
+![Figure 13](/LinuxDrivers/Images/Part8/figure_13_x86_specific_io_ports.png)
 
 ## Simplest the serial on x86 platform
 
@@ -32,7 +32,7 @@ In general, from where & how do we get these device data-sheets? Typically, an o
 
 For a device driver writer, the usual sections of interest in a data-sheet are the ones related to registers of the device. Why? As, it is these registers, which a device driver writer need to read from and/or write in to finally use the device. Page 14 of the data-sheet (also shown in Figure 14) shows the complete table of all the twelve 8-bit registers present in the UART PC16550D. Each of the 8 rows corresponds to the respective bit of the registers. Also, note that the register addresses start from 0 and goes till 7. The interesting thing to note about this is that a data-sheet always gives the register offsets, which then need to be added to the base address of the device, to get the actual register addresses. Who decides the base address and where is it obtained from? Base addresses are typically board/platform specific, unless they are dynamically configurable like in the case of PCI devices. In the case here, i.e. serial device on x86, it is dictated by the x86 architecture – and that is what precisely was the starting serial port address mentioned above – 0x3F8. And the eight register offsets 0 to 7 are the ones exactly mapping to the eight port addresses 0x3F8 to 0x3FF. So, these are the actual addresses to be read or written for reading or writing the corresponding serial registers, to achieve the desired serial operations, as per the register descriptions.
 
-![Figure 14](/Images/Part8/figure_14_uart_pc16550d_registers.png)
+![Figure 14](/LinuxDrivers/Images/Part8/figure_14_uart_pc16550d_registers.png)
 
 All the serial register offsets and the register bit masks are defined in the header `<linux/serial_reg.h>`. So, rather than hard coding these values from the data-sheet, the corresponding macros could be used instead. All the following code uses these macros along with the following:
 

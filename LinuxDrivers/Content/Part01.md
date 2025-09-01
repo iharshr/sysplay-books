@@ -24,7 +24,7 @@ A pilot could be a person or automatic systems, possibly monitored by a person. 
 
 General examples of device controllers include hard disk controllers, display controllers, audio controller for the corresponding devices. More technical examples would be the controllers for the hardware protocols, such as an IDE controller, PCI controller, USB controller, SPI controller, I2C controller, etc. Pictorially, this whole concept can be depicted as in figure 1.
 
-![Figure 1](/Images/Part1/figure_1_device_n_driver_interaction.png)
+![Figure 1](/LinuxDrivers/Images/Part1/figure_1_device_n_driver_interaction.png)
 
 Device controllers are typically connected to the CPU through their respectively named buses (collection of physical lines), for example pci bus, ide bus, etc. In today’s embedded world, we more often come across microcontrollers than CPUs, which are nothing but CPU + various device controllers built onto a single chip. This effective embedding of device controllers primarily reduces cost & space, making it suitable for embedded systems. In such cases, the buses are integrated into the chip itself. Does this change anything on the drivers or more generically software front?
 
@@ -34,7 +34,7 @@ Not much except that the bus drivers corresponding to the embedded device contro
 
 Bus drivers provides hardware-specific interface for the corresponding hardware protocols, and are the bottom-most horizontal software layers of an operating system (OS). Over these sit the actual device’ drivers. These operate on the underlying devices using the horizontal layer interfaces, and hence are device-specific. However, the whole idea of writing these drivers is to provide an abstraction to the user. And so on the other end, these do provide interface to the user. This interface varies from OS to OS. In short, a device driver has two parts: i) Device-specific, and ii) OS-specific. Refer to figure 2.
 
-![Figure 2](/Images/Part1/figure_2_linux_device_driver_partition.png)
+![Figure 2](/LinuxDrivers/Images/Part1/figure_2_linux_device_driver_partition.png)
 
 The device-specific portion of a device driver remains same across all operating systems, and is more of understanding and decoding of the device data sheets, than of software programming. A data sheet for a device is a document with technical details of the device, including its operation, performance, programming, etc. Later, I shall show some examples of decoding data sheets as well. However, the OS-specific portion is the one which is tightly coupled with the OS mechanisms of user interfaces. This is the one which differentiates a Linux device driver from a Windows device driver from a MAC device driver.
 
@@ -48,7 +48,7 @@ Based on the OS-specific interface of a driver, in Linux a driver is broadly cla
 - Block-oriented or Storage vertical
 - Byte-oriented or Character vertical
 
-![Figure 3](/Images/Part1/figure_3_linux_kernel_overview.png)
+![Figure 3](/LinuxDrivers/Images/Part1/figure_3_linux_kernel_overview.png)
 
 The other two verticals, loosely the CPU vertical and memory vertical put together with the other three verticals give the complete overview of the Linux kernel, like any text book definition of an OS: “An OS does 5 managements namely: CPU/process, memory, network, storage, device/io”. Though these 2 could be classified as device drivers, where CPU & memory are the respective devices, these two are treated differently for many reasons.
 

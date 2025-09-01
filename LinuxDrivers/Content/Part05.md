@@ -31,7 +31,7 @@ class_destroy(cl);
 
 Refer to Figure 9, for the `/sys` entries created using "chardrv" as the `<device class name>` and "mynull" as the `<device name format>`. That also shows the device file, created by `udev`, based on the `<major>:<minor>` entry in the dev file.
 
-![Figure 9](/Images/Part5/figure_9_auto_dev_file_creation.png)
+![Figure 9](/LinuxDrivers/Images/Part5/figure_9_auto_dev_file_creation.png)
 
 In case of multiple minors, `device_create()` and `device_destroy()` APIs may be put in for-loop, and the `<device name format>`string could be useful. For example, the `device_create()` call in a for-loop indexed by 'i' could be as follows:
 
@@ -153,13 +153,10 @@ Then, Shweta repeated the usual build with new test steps as follows:
 5. “null driver” specific experiments (Refer to Figure 10 for details).
 6. Unload the driver using `rmmod`.
 
-![Figure 10](/Images/Part5/figure_10_null_driver_experiments.png)
+![Figure 10](/LinuxDrivers/Images/Part5/figure_10_null_driver_experiments.png)
 
 ## Summing up
 
 Shweta was surely happy as all on her own she got a character driver written, which works same as the driver for the standard device file `/dev/null`. To understand what it means, check for yourself the `<major, minor>` tuple for `/dev/null`, and similarly also try out the echo and cat commands with it.
 
 But one thing started bothering Shweta. She had got her own calls (`my_open`, `my_close`, `my_read`, `my_write`) in her driver, but how are they working so unusually unlike any regular file system calls. What’s so unusual? Whatever I write, I get nothing when read – isn’t that unusual, at least from regular file operations’ perspective. Any guesses on how would she crack this nut? Watch out for the next article.
-
-
-

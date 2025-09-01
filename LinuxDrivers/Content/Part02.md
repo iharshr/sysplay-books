@@ -12,7 +12,7 @@ As expected he impressed the professor. “Okay! take your seats. But make sure 
 
 These dynamically loadable drivers are more commonly referred as modules and built into individual files with .ko (kernel object) extension. Every Linux system has a standard place under the root file system (`/`) for all the pre-built modules. They are organized similar to the kernel source tree structure under `/lib/modules/<kernel_version>/kernel`, where `<kernel_version>` would be the output of the command `uname -r` on the system. Professor demonstrates to the class as shown in Figure 4.
 
-![Figure 4](/Images/Part2/figure_4_linux_modules.png)
+![Figure 4](/LinuxDrivers/Images/Part2/figure_4_linux_modules.png)
 
 Now, let us take one of the pre-built modules and understand the various operations with it.
 
@@ -24,7 +24,7 @@ Here’s a list of the various (shell) commands relevant to the dynamic operatio
 
 These reside under the `/sbin` directory and are to be executed with root privileges. Let us take the FAT file system related drivers for our experimentation. The various module files would be fat.ko, vfat.ko, etc. under directories fat (& vfat for older kernels) under /lib/modules/`uname -r`/kernel/fs. In case, they are in compressed .gz format, they need to be uncompressed using gunzip, for using with insmod. vfat module depends on fat module. So, fat.ko needs to be loaded before vfat.ko. To do all these steps (decompression & dependency loading) automatically, modprobe can be used instead. Observe that there is no .ko for the module name to modprobe. rmmod is used to unload the modules. Figure 5 demonstrates this complete experimentation.
 
-![Figure 5](/Images/Part2/figure_5_linux_module_operations.png)
+![Figure 5](/LinuxDrivers/Images/Part2/figure_5_linux_module_operations.png)
 
 ## Our first Linux driver
 
@@ -121,4 +121,3 @@ While the students were trying their first module, the bell rang, marking the en
 ## Notes
 
 In most of today’s distros, one may safely have `KERNEL_SOURCE` set to `/lib/modules/$(shell uname -r)/build`, instead of `/usr/src/linux` i.e. `KERNEL_SOURCE := /lib/modules/$(shell uname -r)/build` in the Makefile.
-

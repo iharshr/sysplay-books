@@ -25,7 +25,7 @@ You must have observed the out of place macro KERN_INFO, in the printk calls, in
 
 Depending on these log levels (i.e. the first 3 characters in the format string), the syslog daemon in the user space redirects the corresponding messages to their configured locations – a typical one being the log file `/var/log/messages` for all the log levels. Hence, all the `printk` outputs are by default in that file. Though, they can be configured differently to say serial port `(/dev/ttyS0)` or say all consoles, like what happens typically for `KERN_EMERG`. Now, `/var/log/messages` is buffered & contain messages not only from the kernel but also from various daemons running in the user space. Moreover, the `/var/log/messages` most often is not readable by a normal user, and hence a user-space utility `dmesg` is provided to directly parse the kernel ring buffer and dump it on the standard output. Figure 6 shows the snippets from the two.
 
-![Figure 6](/Images/Part3/figure_6_kernels_message_logging.png)
+![Figure 6](/LinuxDrivers/Images/Part3/figure_6_kernels_message_logging.png)
 
 ## Kernel-specific GCC extensions
 
@@ -50,4 +50,3 @@ Once back into the lab, Shweta remembered their professor mentioning that no /us
 ## Summing up
 
 Lab timings were just getting over. Suddenly, Shweta put out her curiosity – "Hey Pugs! What is the next topic we are going to learn in our Linux device drivers class?". "Hmmm!! Most probably character drivers". With this information, Shweta hurriedly packed up her bag & headed towards her room to setup the kernel sources and try out the next driver on her own. "In case you are stuck up, just give me a call. I’ll be there", called up Pugs from the behind with a smile.
-

@@ -54,7 +54,7 @@ MODULE_DESCRIPTION("Global Symbols exporting Driver");
 
 Each exported symbol also have a corresponding structure placed into each of the kernel symbol table (`__ksymtab`), kernel string table (`__kstrtab`), and kernel CRC table (`__kcrctab`) sections, marking it to be globally accessible. Figure 30 shows a filtered snippet of the `/proc/kallsyms` kernel window, before and after loading the module `our_glob_syms.ko`, which has been compiled using the driver’s usual `makefile`.
 
-![Figure 30](/Images/Part17/figure_30_our_glob_syms.png)
+![Figure 30](/LinuxDrivers/Images/Part17/figure_30_our_glob_syms.png)
 
 The following code shows the supporting header file (our_glob_syms.h), to be included by modules using the exported symbols cool_cl and get_cool_cl:
 
@@ -123,9 +123,9 @@ Subsequently, the following steps and experiments are shown in Figures 31 and 32
 - Various experiments through the corresponding /sys entries
 - And finally, unloading the driver using rmmod
 
-![Figure 31](/Images/Part17/figure_31_module_param.png)
+![Figure 31](/LinuxDrivers/Images/Part17/figure_31_module_param.png)
 
-![Figure 32](/Images/Part17/figure_32_module_param_as_root.png)
+![Figure 32](/LinuxDrivers/Images/Part17/figure_32_module_param_as_root.png)
 
 Observe the following:
 

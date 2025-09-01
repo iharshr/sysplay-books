@@ -220,9 +220,8 @@ All the above code pieces put in together as the real_sfs_minimal.c (based on th
 
 Once compiled using make, getting the `real_sfs_first.ko` driver, Pugs didn’t expect it to be way different from the previous `real_sfs_bb.ko` driver, but at least now it should be reading and verifying the underlying partition. And for that he first tried mounting the usual partition of a pen drive to get an “Invalid SFS detected” message in dmesg output; and then after formatting it. Note the same error of “Not a directory”, etc as in previous article, still existing – as anyways it is still very similar to the previous bare bone driver – the core functionalities yet to be implemented – just that it is now on a real block device partition. Figure 39 shows the exact commands for all these steps.
 
-![Figure 39](/Images/Part23/figure_39_sfs_module_interacting_with_the_pen_drive_partition-1024x549.png)
+![Figure 39](/LinuxDrivers/Images/Part23/figure_39_sfs_module_interacting_with_the_pen_drive_partition-1024x549.png)
 
 **Note: “./format_real_sfs” and “mount” commands may take lot of time (may be in minutes), depending on the partition size. So, preferably use a partition, say less than 1MB.**
 
 With this important step of getting the file system module interacting with the underlying block device, the last step for Pugs would be to do the other transformations from `browse_real_sfs.c` and accordingly use them in the SFS module.
-

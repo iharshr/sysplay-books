@@ -22,11 +22,11 @@ Once built, the following are the experimenting steps (Refer to Figures 25, 26, 
 
 Please note that all the above experimenting steps need to be executed with root privileges.
 
-![Figure 25](/Images/Part15/figure_25_dor_driver.png)
+![Figure 25](/LinuxDrivers/Images/Part15/figure_25_dor_driver.png)
 
-![Figure 26](/Images/Part15/figure_26_xxd_on_rb1.png)
+![Figure 26](/LinuxDrivers/Images/Part15/figure_26_xxd_on_rb1.png)
 
-![Figure 27](/Images/Part15/figure_27_format_on_rb3.png)
+![Figure 27](/LinuxDrivers/Images/Part15/figure_27_format_on_rb3.png)
 
 ## Now, let’s learn the rules
 

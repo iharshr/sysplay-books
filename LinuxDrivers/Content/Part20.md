@@ -194,9 +194,8 @@ One of the daunting questions, if it has not yet bothered you, is how do you fin
 - And definitely the functions get_data_block() and put_data_block() to respectively get and put back the free data blocks based on the dynamic array used_blocks (in browse_sfs.c)
 - All these thoughts, incorporated in the earlier sfs_ds.h and browse_sfs.c files, along with a Makefile and the earlier formatter application format_sfs.c, are available from sfs_code.tar.bz2. Once compiled into browse_sfs and executed as ./browse_sfs, it shows up as something like in Figure 35.
 
-![Figure 35](/Images/Part20/figure_35_simula_file_system_browser_demo-1024x549.png)
+![Figure 35](/LinuxDrivers/Images/Part20/figure_35_simula_file_system_browser_demo-1024x549.png)
 
 ## Summing up
 
 As Shweta, showed the above working demo to her project-mate, he observed some miss-outs, and challenged her to find them out on her own. He hinted them to be related to the newly added functionality and ‘getting free block’ framework – some even visible from the demo, i.e. Figure 35. Can you help Shweta, find them out? If yes, post them in the comments below.
-

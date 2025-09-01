@@ -187,7 +187,7 @@ And then Pugs did the following steps:
 - Showed various experiments using the newly created proc windows. (Refer to Figure 28.)
 - And finally, unloaded the driver using rmmod.
 
-![Figure 28](/Images/Part16/figure_28_proc_driver-1024x549.png)
+![Figure 28](/LinuxDrivers/Images/Part16/figure_28_proc_driver-1024x549.png)
 
 ## Demystifying the details
 
@@ -218,7 +218,7 @@ Again, since kernel v3.10, the read & write fields of struct file_operations are
 
 `read_proc()` in the above code implementation provides the current state and the time since the system has been booted up in different units based on the current state. These are, jiffies in state 0; milliseconds in state 1; seconds & milliseconds in state 2; hours : minutes : seconds in state 3; and `<not implemented>` in other states. And to check the computation accuracy, Figure 29 highlights the system up time in the output of top. `read_proc()`‘s page parameter is a page-sized buffer, typically to be filled up with count bytes from offset off. But more often than not (because of small content), just page is filled up, ignoring all other parameters. Since kernel v3.10, the read logic has to be implemented through something called a sequence file, which is implemented by specifying the pre-defined `seq_read()` function for the file operation read, and then by providing the above logic in the sequence file’s read function through the file operation open using `single_open()`.
 
-![Figure 29](/Images/Part16/figure_29_top_output-1024x549.png)
+![Figure 29](/LinuxDrivers/Images/Part16/figure_29_top_output-1024x549.png)
 
 All the `/proc` related structure definitions and function declarations are available through `<linux/proc_fs.h>`. The sequence file related stuff (since kernel v3.10) are available through `<linux/seq_file.h>`. And the jiffies related function declarations and macro definitions are in `<linux/jiffies.h>`. On a special note, the actual jiffies are being calculated by subtracting `INITIAL_JIFFIES`, as on boot-up, `jiffies` is initialized to `INITIAL_JIFFIES` instead of zero.
 

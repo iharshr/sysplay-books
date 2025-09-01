@@ -153,9 +153,8 @@ $ ls -al # List the .sfsf created with a size of 512 KiBytes
 
 Figure 33 shows the `.sfsf` pictorially for the partition size of 1024 blocks of 512 bytes each.
 
-![Figure 33](/Images/Part18/figure_33_simula_file_system.png)
+![Figure 33](/LinuxDrivers/Images/Part18/figure_33_simula_file_system.png)
 
 ## Summing up
 
 With the above design of simula file system (`sfs_ds.h`), along with the implementation for its format command (`format_sfs.c`), Shweta has thus created the empty file system over the simulated partition `.sfsf`. Now, as listed earlier, the final step in simulating the user space file system is to create the interface/shell to type commands and operate on the empty file system just created on `.sfsf`. Let’s watch out for Shweta coding that as well, completing the first small step towards understanding their project.
-

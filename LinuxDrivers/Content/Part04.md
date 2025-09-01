@@ -12,7 +12,7 @@ We already know what drivers are, and why we need them. What is so special about
 
 Take, for example, serial drivers, audio drivers, video drivers, camera drivers, and basic I/O drivers. In fact, all device drivers that are neither storage nor network device drivers are some type of a character driver. Let’s look into the commonalities of these character drivers, and how Shweta wrote one of them.
 
-![Figure 7](/Images/Part4/figure_7_character_driver_overview.png)
+![Figure 7](/LinuxDrivers/Images/Part4/figure_7_character_driver_overview.png)
 
 ## The complete connection
 
@@ -142,5 +142,4 @@ Then, Shweta repeated the usual steps, she learnt for the first driver
 
 Additionally, before unloading the driver, she peeped into the kernel window /proc/devices to look for the registered major number with the name “Shweta” using cat /proc/devices. It was right there. But she couldn’t find any device file created under /dev with the same major number. So, she created them by hand using mknod, and then tried reading & writing those. Figure 8 shows all these. Please note that the major number “250” may vary from system to system based on the availability. Figure 8 also shows the results, Shweta got from reading & writing one of the device files. That reminded her that the second step for connecting the device file with the device driver – “Linking the device file operations to the device driver functions” is not yet done. She realized that she needs to dig further information to complete this step and also to figure out the reason for the missing device files under /dev. We shall continue further in our next article, to figure out what more is Shweta learning and how is she going ahead with her first character driver.
 
-![Figure 8](/Images/Part4/figure_8_char_dev_file_experiments.png)
-
+![Figure 8](/LinuxDrivers/Images/Part4/figure_8_char_dev_file_experiments.png)

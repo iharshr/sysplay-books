@@ -10,13 +10,13 @@ As usual, the lab staff are a bit skeptical to let the students directly get ont
 
 As every one settled in the laboratory, lab expert Priti started with the introduction to hardware interfacing in Linux. Skipping the theoretical details, the first interesting slide was about the generic architecture-transparent hardware interfacing. See Figure 11.
 
-![Figure 11](/Images/Part7/figure_11_hardware_mapping.png)
+![Figure 11](/LinuxDrivers/Images/Part7/figure_11_hardware_mapping.png)
 
 The basic assumption being that the architecture is 32-bit. For others, the memory map would change accordingly. For 32-bit address bus, the address/memory map ranges from 0 `(0x00000000)` to ‘232 – 1′ `(0xFFFFFFFF)`. And an architecture independent layout of this memory map would be as shown in the Figure 11 – memory (RAM) and device regions (registers & memories of devices) mapped in an interleaved fashion. The architecture dependent thing would be what these addresses are actually there. For example, in an x86 architecture, the initial 3GB `(0x00000000 to 0xBFFFFFFF)` is typically for RAM and the later 1GB `(0xC0000000 to 0xFFFFFFFF)`for device maps. However, if the RAM is less, say 2GB, device maps could start from 2GB `(0x80000000)`.
 
 Type in `cat /proc/iomem` to list the memory map on your system. `cat /proc/meminfo` would give you an approximate RAM size on your system. Refer to Figure 12 for a snapshot.
 
-![Figure 12](/Images/Part7/figure_12_phys_n_bus_addresses.png)
+![Figure 12](/LinuxDrivers/Images/Part7/figure_12_phys_n_bus_addresses.png)
 
 Irrespective of the actual values, the addresses referring to RAM are termed as physical addresses. And the addresses referring to device maps are termed as bus addresses, as these devices are always mapped through some architecture-specific bus. For example, PCI bus in x86 architecture, AMBA bus in ARM architectures, SuperHyway bus in SuperH (or SH) architectures, GX bus on PowerPC (or PPC), etc.
 
